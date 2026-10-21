@@ -1,0 +1,283 @@
+{
+  "parent": "minecraft:block/block",
+  "render_type": "minecraft:solid",
+  "textures": {
+    "wood": "cozykitchens:block/cabinet/pale_oak_cabinet_side",
+    "panel": "minecraft:block/pale_oak_planks",
+    "top": "minecraft:block/quartz_block_bottom",
+    "metal": "minecraft:block/gold_block",
+    "enamel": "minecraft:block/white_terracotta",
+    "dark": "minecraft:block/black_terracotta",
+    "glass": "minecraft:block/gray_stained_glass",
+    "fire": "minecraft:block/magma",
+    "water": "minecraft:block/water_still",
+    "particle": "cozykitchens:block/cabinet/pale_oak_cabinet_side",
+    "front": "cozykitchens:block/cabinet/pale_oak_cabinet_front",
+    "cabinet_top": "cozykitchens:block/cabinet/pale_oak_cabinet_top"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        2,
+        4
+      ],
+      "to": [
+        1,
+        16,
+        16
+      ],
+      "faces": {
+        "north": {
+          "texture": "#wood"
+        },
+        "south": {
+          "texture": "#wood"
+        },
+        "east": {
+          "texture": "#wood"
+        },
+        "west": {
+          "texture": "#wood"
+        },
+        "up": {
+          "texture": "#cabinet_top"
+        },
+        "down": {
+          "texture": "#cabinet_top"
+        }
+      }
+    },
+    {
+      "from": [
+        15,
+        2,
+        4
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "north": {
+          "texture": "#wood"
+        },
+        "south": {
+          "texture": "#wood"
+        },
+        "east": {
+          "texture": "#wood"
+        },
+        "west": {
+          "texture": "#wood"
+        },
+        "up": {
+          "texture": "#cabinet_top"
+        },
+        "down": {
+          "texture": "#cabinet_top"
+        }
+      }
+    },
+    {
+      "from": [
+        1,
+        2,
+        15
+      ],
+      "to": [
+        15,
+        16,
+        16
+      ],
+      "faces": {
+        "north": {
+          "texture": "#wood"
+        },
+        "south": {
+          "texture": "#wood"
+        },
+        "east": {
+          "texture": "#wood"
+        },
+        "west": {
+          "texture": "#wood"
+        },
+        "up": {
+          "texture": "#cabinet_top"
+        },
+        "down": {
+          "texture": "#cabinet_top"
+        }
+      }
+    },
+    {
+      "from": [
+        1,
+        2,
+        4
+      ],
+      "to": [
+        15,
+        3,
+        15
+      ],
+      "faces": {
+        "north": {
+          "texture": "#wood"
+        },
+        "south": {
+          "texture": "#wood"
+        },
+        "east": {
+          "texture": "#wood"
+        },
+        "west": {
+          "texture": "#wood"
+        },
+        "up": {
+          "texture": "#cabinet_top"
+        },
+        "down": {
+          "texture": "#cabinet_top"
+        }
+      }
+    },
+    {
+      "from": [
+        1,
+        6.5,
+        4
+      ],
+      "to": [
+        15,
+        7,
+        15
+      ],
+      "faces": {
+        "north": {
+          "texture": "#wood"
+        },
+        "south": {
+          "texture": "#wood"
+        },
+        "east": {
+          "texture": "#wood"
+        },
+        "west": {
+          "texture": "#wood"
+        },
+        "up": {
+          "texture": "#cabinet_top"
+        },
+        "down": {
+          "texture": "#cabinet_top"
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        15.25,
+        3
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "north": {
+          "texture": "#wood"
+        },
+        "south": {
+          "texture": "#wood"
+        },
+        "east": {
+          "texture": "#wood"
+        },
+        "west": {
+          "texture": "#wood"
+        },
+        "up": {
+          "texture": "#cabinet_top"
+        },
+        "down": {
+          "texture": "#cabinet_top"
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        2,
+        3
+      ],
+      "to": [
+        16,
+        2.75,
+        16
+      ],
+      "faces": {
+        "north": {
+          "texture": "#wood"
+        },
+        "south": {
+          "texture": "#wood"
+        },
+        "east": {
+          "texture": "#wood"
+        },
+        "west": {
+          "texture": "#wood"
+        },
+        "up": {
+          "texture": "#cabinet_top"
+        },
+        "down": {
+          "texture": "#cabinet_top"
+        }
+      }
+    },
+    {
+      "from": [
+        0.75,
+        2.75,
+        2.75
+      ],
+      "to": [
+        15.25,
+        15.25,
+        3.75
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#wood"
+        },
+        "east": {
+          "texture": "#wood"
+        },
+        "west": {
+          "texture": "#wood"
+        },
+        "up": {
+          "texture": "#cabinet_top"
+        },
+        "down": {
+          "texture": "#cabinet_top"
+        }
+      },
+      "name": "cabinet_door"
+    }
+  ]
+}

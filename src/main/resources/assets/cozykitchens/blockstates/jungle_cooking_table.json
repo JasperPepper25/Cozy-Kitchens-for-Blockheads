@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "cozykitchens:block/jungle_cooking_table",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "cozykitchens:block/jungle_cooking_table",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "cozykitchens:block/jungle_cooking_table",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "cozykitchens:block/jungle_cooking_table",
+      "y": 270
+    }
+  }
+}

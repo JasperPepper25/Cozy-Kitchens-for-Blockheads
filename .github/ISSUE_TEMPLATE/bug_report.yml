@@ -1,0 +1,33 @@
+name: Bug report
+description: Report a kitchen, compatibility, crafting, or rendering problem.
+title: "[Bug] "
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Versions
+      description: Include Cozy Kitchens, Minecraft, Forge, CFB, Balm, and Backport if installed.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps and affected blocks
+      description: Describe how to reproduce the issue and the affected wood/appliance sets.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Modpack, resource packs, and shaders
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots and logs
+      description: Attach useful screenshots or log excerpts. Remove personal information first.

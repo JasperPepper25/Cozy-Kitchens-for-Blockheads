@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "cozykitchens_cabinet",
+  "ingredients": [
+    {
+      "tag": "cozykitchens:reskinnable_cabinet"
+    },
+    {
+      "item": "minecraft:birch_planks"
+    }
+  ],
+  "result": {
+    "item": "cozykitchens:birch_cabinet"
+  }
+}

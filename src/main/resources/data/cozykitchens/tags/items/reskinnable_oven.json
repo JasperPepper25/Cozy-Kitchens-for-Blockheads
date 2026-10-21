@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "cookingforblockheads:oven",
+    {
+      "id": "cozykitchens:ivory_oven",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:sage_oven",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:blush_oven",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:charcoal_oven",
+      "required": true
+    }
+  ]
+}

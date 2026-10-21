@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "cookingforblockheads:toaster",
+    {
+      "id": "cozykitchens:ivory_toaster",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:sage_toaster",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:blush_toaster",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:charcoal_toaster",
+      "required": true
+    }
+  ]
+}

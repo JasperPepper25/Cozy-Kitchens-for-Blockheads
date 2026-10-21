@@ -1,0 +1,59 @@
+{
+  "parent": "minecraft:block/block",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "wood": "cozykitchens:block/cabinet/bamboo_cabinet_side",
+    "panel": "minecraft:block/bamboo_planks",
+    "top": "minecraft:block/quartz_block_bottom",
+    "metal": "minecraft:block/gold_block",
+    "enamel": "minecraft:block/white_terracotta",
+    "dark": "minecraft:block/black_terracotta",
+    "glass": "minecraft:block/gray_stained_glass",
+    "fire": "minecraft:block/magma",
+    "water": "minecraft:block/water_still",
+    "particle": "cozykitchens:block/cabinet/bamboo_cabinet_side",
+    "front": "cozykitchens:block/cabinet/bamboo_cabinet_front",
+    "cabinet_top": "cozykitchens:block/cabinet/bamboo_cabinet_top"
+  },
+  "elements": [
+    {
+      "from": [
+        3.55,
+        8,
+        3.55
+      ],
+      "to": [
+        12.45,
+        13.75,
+        12.45
+      ],
+      "faces": {
+        "north": {
+          "texture": "#water",
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "#water",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#water",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#water",
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "#water",
+          "tintindex": 0
+        },
+        "down": {
+          "texture": "#water",
+          "tintindex": 0
+        }
+      },
+      "name": "basin_water"
+    }
+  ]
+}

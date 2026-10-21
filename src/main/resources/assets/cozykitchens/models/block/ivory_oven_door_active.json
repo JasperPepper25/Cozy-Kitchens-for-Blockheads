@@ -1,0 +1,114 @@
+{
+  "parent": "minecraft:block/block",
+  "render_type": "minecraft:solid",
+  "textures": {
+    "wood": "minecraft:block/white_terracotta",
+    "panel": "minecraft:block/white_terracotta",
+    "top": "minecraft:block/quartz_block_bottom",
+    "metal": "minecraft:block/gold_block",
+    "enamel": "minecraft:block/white_terracotta",
+    "dark": "minecraft:block/black_terracotta",
+    "glass": "minecraft:block/gray_stained_glass",
+    "fire": "minecraft:block/magma",
+    "water": "minecraft:block/water_still",
+    "particle": "minecraft:block/white_terracotta"
+  },
+  "elements": [
+    {
+      "from": [
+        1,
+        2,
+        0.8
+      ],
+      "to": [
+        15,
+        12,
+        2
+      ],
+      "faces": {
+        "north": {
+          "texture": "#enamel"
+        },
+        "south": {
+          "texture": "#enamel"
+        },
+        "east": {
+          "texture": "#enamel"
+        },
+        "west": {
+          "texture": "#enamel"
+        },
+        "up": {
+          "texture": "#enamel"
+        },
+        "down": {
+          "texture": "#enamel"
+        }
+      }
+    },
+    {
+      "from": [
+        3,
+        3.5,
+        0.55
+      ],
+      "to": [
+        13,
+        9,
+        0.8
+      ],
+      "faces": {
+        "north": {
+          "texture": "#fire"
+        },
+        "south": {
+          "texture": "#fire"
+        },
+        "east": {
+          "texture": "#fire"
+        },
+        "west": {
+          "texture": "#fire"
+        },
+        "up": {
+          "texture": "#fire"
+        },
+        "down": {
+          "texture": "#fire"
+        }
+      }
+    },
+    {
+      "from": [
+        3,
+        10.2,
+        -0.2
+      ],
+      "to": [
+        13,
+        11,
+        0.55
+      ],
+      "faces": {
+        "north": {
+          "texture": "#metal"
+        },
+        "south": {
+          "texture": "#metal"
+        },
+        "east": {
+          "texture": "#metal"
+        },
+        "west": {
+          "texture": "#metal"
+        },
+        "up": {
+          "texture": "#metal"
+        },
+        "down": {
+          "texture": "#metal"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "action": "actions/checkout",
+    "tag": "v7.0.1",
+    "sha": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+    "url": "https://github.com/actions/checkout/releases/tag/v7.0.1"
+  },
+  {
+    "action": "actions/setup-java",
+    "tag": "v6.1.0",
+    "sha": "b843ebf9b913146b38da2eaa7aeddf76074ae1ad",
+    "url": "https://github.com/actions/setup-java/releases/tag/v6.1.0"
+  },
+  {
+    "action": "actions/upload-artifact",
+    "tag": "v7.0.2",
+    "sha": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+    "url": "https://github.com/actions/upload-artifact/releases/tag/v7.0.2"
+  }
+]

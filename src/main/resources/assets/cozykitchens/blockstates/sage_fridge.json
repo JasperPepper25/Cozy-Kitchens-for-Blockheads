@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "facing=north,model=small": {
+      "model": "cozykitchens:block/sage_fridge",
+      "y": 0
+    },
+    "facing=north,model=large_lower": {
+      "model": "cozykitchens:block/sage_fridge_large_lower",
+      "y": 0
+    },
+    "facing=north,model=large_upper": {
+      "model": "cozykitchens:block/sage_fridge_large_upper",
+      "y": 0
+    },
+    "facing=east,model=small": {
+      "model": "cozykitchens:block/sage_fridge",
+      "y": 90
+    },
+    "facing=east,model=large_lower": {
+      "model": "cozykitchens:block/sage_fridge_large_lower",
+      "y": 90
+    },
+    "facing=east,model=large_upper": {
+      "model": "cozykitchens:block/sage_fridge_large_upper",
+      "y": 90
+    },
+    "facing=south,model=small": {
+      "model": "cozykitchens:block/sage_fridge",
+      "y": 180
+    },
+    "facing=south,model=large_lower": {
+      "model": "cozykitchens:block/sage_fridge_large_lower",
+      "y": 180
+    },
+    "facing=south,model=large_upper": {
+      "model": "cozykitchens:block/sage_fridge_large_upper",
+      "y": 180
+    },
+    "facing=west,model=small": {
+      "model": "cozykitchens:block/sage_fridge",
+      "y": 270
+    },
+    "facing=west,model=large_lower": {
+      "model": "cozykitchens:block/sage_fridge_large_lower",
+      "y": 270
+    },
+    "facing=west,model=large_upper": {
+      "model": "cozykitchens:block/sage_fridge_large_upper",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "cozykitchens_sink",
+  "ingredients": [
+    {
+      "tag": "cozykitchens:reskinnable_sink"
+    },
+    {
+      "item": "minecraft:bamboo_planks"
+    }
+  ],
+  "result": {
+    "item": "cozykitchens:bamboo_sink"
+  }
+}

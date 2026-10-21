@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "cozykitchens_cooking_table",
+  "ingredients": [
+    {
+      "tag": "cozykitchens:reskinnable_cooking_table"
+    },
+    {
+      "item": "minecraft:dark_oak_planks"
+    }
+  ],
+  "result": {
+    "item": "cozykitchens:dark_oak_cooking_table"
+  }
+}

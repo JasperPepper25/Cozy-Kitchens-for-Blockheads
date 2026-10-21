@@ -1,0 +1,45 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="cozykitchens"
+version="0.2.1"
+displayName="Cozy Kitchens for Blockheads"
+authors="Fine Edge / Rafe Robichaud"
+description='''Wood-specific Farmer's Delight cabinet artwork, ceramic sinks and soft enamel appliances powered by Cooking for Blockheads. Includes optional Vanilla Backport pale oak.'''
+
+[[dependencies.cozykitchens]]
+modId="forge"
+mandatory=true
+versionRange="[47.2.0,48)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.cozykitchens]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.cozykitchens]]
+modId="cookingforblockheads"
+mandatory=true
+versionRange="[16.0.15,16.0.16)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.cozykitchens]]
+modId="balm"
+mandatory=true
+versionRange="[7.3.43,8)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.cozykitchens]]
+modId="vanillabackport"
+mandatory=false
+versionRange="[1.0.0,)"
+ordering="AFTER"
+side="BOTH"

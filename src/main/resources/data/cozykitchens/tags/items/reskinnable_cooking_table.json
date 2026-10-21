@@ -1,0 +1,54 @@
+{
+  "replace": false,
+  "values": [
+    "cookingforblockheads:cooking_table",
+    {
+      "id": "cozykitchens:oak_cooking_table",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:spruce_cooking_table",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:birch_cooking_table",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:jungle_cooking_table",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:acacia_cooking_table",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:dark_oak_cooking_table",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:mangrove_cooking_table",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:cherry_cooking_table",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:bamboo_cooking_table",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:crimson_cooking_table",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:warped_cooking_table",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:pale_oak_cooking_table",
+      "required": false
+    }
+  ]
+}

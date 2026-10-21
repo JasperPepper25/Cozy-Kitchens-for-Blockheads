@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "cozykitchens:ivory_oven",
+    "cozykitchens:ivory_fridge",
+    "cozykitchens:ivory_toaster",
+    "cozykitchens:sage_oven",
+    "cozykitchens:sage_fridge",
+    "cozykitchens:sage_toaster",
+    "cozykitchens:blush_oven",
+    "cozykitchens:blush_fridge",
+    "cozykitchens:blush_toaster",
+    "cozykitchens:charcoal_oven",
+    "cozykitchens:charcoal_fridge",
+    "cozykitchens:charcoal_toaster"
+  ]
+}

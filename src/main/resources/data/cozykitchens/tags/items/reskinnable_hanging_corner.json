@@ -1,0 +1,54 @@
+{
+  "replace": false,
+  "values": [
+    "cookingforblockheads:hanging_corner",
+    {
+      "id": "cozykitchens:oak_hanging_corner",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:spruce_hanging_corner",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:birch_hanging_corner",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:jungle_hanging_corner",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:acacia_hanging_corner",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:dark_oak_hanging_corner",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:mangrove_hanging_corner",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:cherry_hanging_corner",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:bamboo_hanging_corner",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:crimson_hanging_corner",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:warped_hanging_corner",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:pale_oak_hanging_corner",
+      "required": false
+    }
+  ]
+}

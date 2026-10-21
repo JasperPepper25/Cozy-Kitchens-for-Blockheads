@@ -1,0 +1,54 @@
+{
+  "replace": false,
+  "values": [
+    "cookingforblockheads:counter",
+    {
+      "id": "cozykitchens:oak_counter",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:spruce_counter",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:birch_counter",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:jungle_counter",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:acacia_counter",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:dark_oak_counter",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:mangrove_counter",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:cherry_counter",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:bamboo_counter",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:crimson_counter",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:warped_counter",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:pale_oak_counter",
+      "required": false
+    }
+  ]
+}

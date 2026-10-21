@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "cozykitchens_cabinet",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "vanillabackport"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "cozykitchens:reskinnable_cabinet"
+    },
+    {
+      "item": "minecraft:pale_oak_planks"
+    }
+  ],
+  "result": {
+    "item": "cozykitchens:pale_oak_cabinet"
+  }
+}

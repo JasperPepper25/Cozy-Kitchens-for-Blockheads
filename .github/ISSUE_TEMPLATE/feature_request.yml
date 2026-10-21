@@ -1,0 +1,21 @@
+name: Design or feature request
+description: Suggest a kitchen variant, visual refinement, or functional improvement.
+title: "[Idea] "
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Proposed change
+      description: Identify the affected set and describe the desired result.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: Visual references or examples
+      description: Include images or links and explain which details matter.
+  - type: textarea
+    id: function
+    attributes:
+      label: Kitchen functionality and compatibility
+      description: Describe any behavior or mod interactions the change should support.

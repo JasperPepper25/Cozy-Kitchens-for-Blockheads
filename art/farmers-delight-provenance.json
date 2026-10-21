@@ -1,0 +1,205 @@
+{
+  "repository": "https://github.com/vectorwing/FarmersDelight",
+  "revision": "e854d56d4eea8dc120650d43da0d1472711797ad",
+  "license": "MIT; Copyright (c) 2020 vectorwing",
+  "files": [
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/acacia_cabinet_front.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/acacia_cabinet_front.png",
+      "sha256": "364a1e6a36a3afb3e534169dba6713933aa071ac0c352cacdbe667be33f0c71b",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/acacia_cabinet_side.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/acacia_cabinet_side.png",
+      "sha256": "8115d3982562c422a695ada769c5427e5df1b12ab8941e5532c1d504b705fb41",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/acacia_cabinet_top.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/acacia_cabinet_top.png",
+      "sha256": "8eb5f1931500da64ff4a652110da44207fe6c2ea4a852d7efe92135df46c564e",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/bamboo_cabinet_front.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/bamboo_cabinet_front.png",
+      "sha256": "a66a0da2791ce254103361b72359d74cc341b08d38065cc916cc35a051eb0fd9",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/bamboo_cabinet_side.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/bamboo_cabinet_side.png",
+      "sha256": "5639835b4daee989cf8c5b105ca2a4bdd4f8edc0859f1e6a6258940109c9ff17",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/bamboo_cabinet_top.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/bamboo_cabinet_top.png",
+      "sha256": "75de2a184c02a527bc33d7f139d2180503dff4d0cabea25a3bdbebad2c05d1a5",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/birch_cabinet_front.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/birch_cabinet_front.png",
+      "sha256": "c7ff9da409ff34ab7fac83ed13e70426adfd440da95d52057d48c0951cd1d085",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/birch_cabinet_side.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/birch_cabinet_side.png",
+      "sha256": "76f8dbeac754d1e9f954e57e22642797669f2ac038b7d0c8194b5aeccd4692c0",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/birch_cabinet_top.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/birch_cabinet_top.png",
+      "sha256": "b6ac1e21f898b6a522a76b9cef2dad60f69698743903653ef5122ec40c30a685",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/cherry_cabinet_front.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/cherry_cabinet_front.png",
+      "sha256": "fa903fd98c55a1e230c6ef3a42798b22c2eeaa6f288ed51b6282ee6d8d928b22",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/cherry_cabinet_side.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/cherry_cabinet_side.png",
+      "sha256": "5a5ec843af2a4f75cdd33f93c7f994a9a30e4071f77cf95c8b235444ca187397",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/cherry_cabinet_top.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/cherry_cabinet_top.png",
+      "sha256": "207e3f91b96da28792f2ee90aa36233e05ca798dc7e0b2932a6d8a4b8e3b0f27",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/crimson_cabinet_front.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/crimson_cabinet_front.png",
+      "sha256": "aaf7683453eaf91f72686e24a59ce23ee36e7be417b7f8cc03e28e83c2afc86b",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/crimson_cabinet_side.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/crimson_cabinet_side.png",
+      "sha256": "7ff08e08436fbdf2a1380c2570c870daf8a71b35e6f7ae29b65b470fe3196ede",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/crimson_cabinet_top.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/crimson_cabinet_top.png",
+      "sha256": "3b3b76a9705b086adc3e76234f49b6d23f921dff41d1f20820d36a2d519379ad",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/dark_oak_cabinet_front.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/dark_oak_cabinet_front.png",
+      "sha256": "729715f5a0cda1607c3c05a4ce3bbd88b421ad9fc0990c9f628f8d39f7d69ee1",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/dark_oak_cabinet_side.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/dark_oak_cabinet_side.png",
+      "sha256": "a643550d3e69785708cd007954c2482006480c83d14c6b0b793ab170be0ead34",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/dark_oak_cabinet_top.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/dark_oak_cabinet_top.png",
+      "sha256": "fefa61e777569f073175dd25a1f9ea37118ca3bd8dc7c7eca20dec8cd817d801",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/jungle_cabinet_front.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/jungle_cabinet_front.png",
+      "sha256": "08299fecebc2b7e6b289e31e16725e1363fa521fb2298030c631a3ebaed3cf8c",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/jungle_cabinet_side.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/jungle_cabinet_side.png",
+      "sha256": "e30ea374b0ec240d86918d9886b33edb956064738082f3d22201eaf1408f6d4d",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/jungle_cabinet_top.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/jungle_cabinet_top.png",
+      "sha256": "84383435cc469d8849321a77b16c6e1ed41bf440d1e98a5d0a29cb815d026037",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/mangrove_cabinet_front.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/mangrove_cabinet_front.png",
+      "sha256": "2df9adc2e882c67ebee01ea7805f367b4243f50d72cd474150c6920f648eba87",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/mangrove_cabinet_side.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/mangrove_cabinet_side.png",
+      "sha256": "dae3f72c86c8216c4aeaaf3a76e888f23e682dbdb1c4a781dfa019b74f9fd426",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/mangrove_cabinet_top.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/mangrove_cabinet_top.png",
+      "sha256": "58194f95397d758a1e42e6eb959f9595584b6dbb41beda94c390888f8aba5b95",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/oak_cabinet_front.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/oak_cabinet_front.png",
+      "sha256": "ba00483cf781b8ec077f9292c6d86ae7f88784f03e06b7ed9846f7ef181d00af",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/oak_cabinet_side.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/oak_cabinet_side.png",
+      "sha256": "e4b1109982519ec208d5ca0e93c212bdcdf3886799bdeab6d1181a7e1af47750",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/oak_cabinet_top.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/oak_cabinet_top.png",
+      "sha256": "e4b1109982519ec208d5ca0e93c212bdcdf3886799bdeab6d1181a7e1af47750",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/spruce_cabinet_front.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/spruce_cabinet_front.png",
+      "sha256": "191f77ff8fac33510a97fdf88ca9fd7535defd97df79efe25fa7fc557bac1b2b",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/spruce_cabinet_side.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/spruce_cabinet_side.png",
+      "sha256": "424fd070a4b52ef9b43dc2fa80b1db0846d36ef425dde6829e6d9c6a78ca48ae",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/spruce_cabinet_top.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/spruce_cabinet_top.png",
+      "sha256": "427d24052e3d0f4321bd7235080d1b8254913104e9ec2e68eb56e0759bfd1477",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/warped_cabinet_front.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/warped_cabinet_front.png",
+      "sha256": "7400d49141ae19c7e6468f5fb4b2dd8650eef49ff2346cd44e8c34e22db1cf7d",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/warped_cabinet_side.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/warped_cabinet_side.png",
+      "sha256": "6ad998bd4290b0bc3c7da088b10c54148e031738774baa5ea2661e89919b55ae",
+      "modified": false
+    },
+    {
+      "source": "src/main/resources/assets/farmersdelight/textures/block/warped_cabinet_top.png",
+      "bundled": "src/main/resources/assets/cozykitchens/textures/block/cabinet/warped_cabinet_top.png",
+      "sha256": "39dd964a72d5d5a9ec1d8e1a35c4f98706234dccd3b52532544034f9c1902770",
+      "modified": false
+    }
+  ]
+}

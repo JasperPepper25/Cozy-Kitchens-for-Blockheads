@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "cozykitchens_hanging_corner",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "vanillabackport"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "cozykitchens:reskinnable_hanging_corner"
+    },
+    {
+      "item": "minecraft:pale_oak_planks"
+    }
+  ],
+  "result": {
+    "item": "cozykitchens:pale_oak_hanging_corner"
+  }
+}

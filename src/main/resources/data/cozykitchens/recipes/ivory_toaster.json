@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "cozykitchens_toaster",
+  "ingredients": [
+    {
+      "tag": "cozykitchens:reskinnable_toaster"
+    },
+    {
+      "item": "minecraft:white_dye"
+    }
+  ],
+  "result": {
+    "item": "cozykitchens:ivory_toaster"
+  }
+}

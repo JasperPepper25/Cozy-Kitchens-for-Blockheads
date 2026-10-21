@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "cozykitchens:block/warped_hanging_corner",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "cozykitchens:block/warped_hanging_corner",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "cozykitchens:block/warped_hanging_corner",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "cozykitchens:block/warped_hanging_corner",
+      "y": 270
+    }
+  }
+}

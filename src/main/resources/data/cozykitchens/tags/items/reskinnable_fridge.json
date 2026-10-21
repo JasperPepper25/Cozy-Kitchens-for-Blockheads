@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "cookingforblockheads:fridge",
+    {
+      "id": "cozykitchens:ivory_fridge",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:sage_fridge",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:blush_fridge",
+      "required": true
+    },
+    {
+      "id": "cozykitchens:charcoal_fridge",
+      "required": true
+    }
+  ]
+}
