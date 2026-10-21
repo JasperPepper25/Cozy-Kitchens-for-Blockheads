@@ -1,0 +1,89 @@
+{
+  "parent": "minecraft:block/block",
+  "render_type": "minecraft:solid",
+  "textures": {
+    "wood": "cozykitchens:block/cabinet/bamboo_cabinet_side",
+    "panel": "minecraft:block/bamboo_planks",
+    "top": "minecraft:block/quartz_block_bottom",
+    "metal": "minecraft:block/gold_block",
+    "enamel": "cozykitchens:block/ceramic/ivory",
+    "dark": "cozykitchens:block/ceramic/dark",
+    "glass": "minecraft:block/gray_stained_glass",
+    "fire": "minecraft:block/magma",
+    "water": "minecraft:block/water_still",
+    "particle": "cozykitchens:block/cabinet/bamboo_cabinet_side",
+    "front": "cozykitchens:block/cabinet/bamboo_cabinet_front",
+    "cabinet_top": "cozykitchens:block/cabinet/bamboo_cabinet_top"
+  },
+  "elements": [
+    {
+      "from": [
+        8.03125,
+        2.75,
+        2.75
+      ],
+      "to": [
+        15.25,
+        15.25,
+        3.75
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            0,
+            16,
+            16
+          ],
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#wood",
+          "uv": [
+            8.03125,
+            0.75,
+            15.25,
+            13.25
+          ]
+        },
+        "east": {
+          "texture": "#wood",
+          "uv": [
+            12.25,
+            0.75,
+            13.25,
+            13.25
+          ]
+        },
+        "west": {
+          "texture": "#wood",
+          "uv": [
+            2.75,
+            0.75,
+            3.75,
+            13.25
+          ]
+        },
+        "up": {
+          "texture": "#cabinet_top",
+          "uv": [
+            8.03125,
+            2.75,
+            15.25,
+            3.75
+          ]
+        },
+        "down": {
+          "texture": "#cabinet_top",
+          "uv": [
+            8.03125,
+            12.25,
+            15.25,
+            13.25
+          ]
+        }
+      },
+      "name": "cabinet_door_right"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 plugins { id 'net.minecraftforge.gradle' version '6.0.54' }
-version = '0.2.1'
+version = '0.3.0'
 group = 'dev.fineedge.cozykitchens'
 base { archivesName = 'cozy-kitchens-forge-1.20.1' }
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -33,7 +33,9 @@ minecraft {
    property 'mixin.env.refMapRemappingFile', file('build/createSrgToMcp/output.srg').absolutePath
    mods { cozykitchens { source sourceSets.main } }
   }
-  client {}
+  client {
+   if (project.hasProperty('withClientTests')) { args '--width', '1600', '--height', '1000' }
+  }
   server { args '--nogui' }
   gameTestServer { property 'forge.enabledGameTestNamespaces', 'cozykitchens' }
  }

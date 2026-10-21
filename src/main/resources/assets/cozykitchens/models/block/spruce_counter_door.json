@@ -6,8 +6,8 @@
     "panel": "minecraft:block/spruce_planks",
     "top": "minecraft:block/quartz_block_bottom",
     "metal": "minecraft:block/gold_block",
-    "enamel": "minecraft:block/white_terracotta",
-    "dark": "minecraft:block/black_terracotta",
+    "enamel": "cozykitchens:block/ceramic/ivory",
+    "dark": "cozykitchens:block/ceramic/dark",
     "glass": "minecraft:block/gray_stained_glass",
     "fire": "minecraft:block/magma",
     "water": "minecraft:block/water_still",
@@ -23,7 +23,7 @@
         0.5
       ],
       "to": [
-        15.25,
+        7.96875,
         14,
         1.5
       ],
@@ -32,28 +32,127 @@
           "uv": [
             0,
             0,
+            8,
+            16
+          ],
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#wood",
+          "uv": [
+            0.75,
+            2,
+            7.96875,
+            15
+          ]
+        },
+        "east": {
+          "texture": "#wood",
+          "uv": [
+            14.5,
+            2,
+            15.5,
+            15
+          ]
+        },
+        "west": {
+          "texture": "#wood",
+          "uv": [
+            0.5,
+            2,
+            1.5,
+            15
+          ]
+        },
+        "up": {
+          "texture": "#cabinet_top",
+          "uv": [
+            0.75,
+            0.5,
+            7.96875,
+            1.5
+          ]
+        },
+        "down": {
+          "texture": "#cabinet_top",
+          "uv": [
+            0.75,
+            14.5,
+            7.96875,
+            15.5
+          ]
+        }
+      },
+      "name": "cabinet_door_left"
+    },
+    {
+      "from": [
+        8.03125,
+        1,
+        0.5
+      ],
+      "to": [
+        15.25,
+        14,
+        1.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            0,
             16,
             16
           ],
           "texture": "#front"
         },
         "south": {
-          "texture": "#wood"
+          "texture": "#wood",
+          "uv": [
+            8.03125,
+            2,
+            15.25,
+            15
+          ]
         },
         "east": {
-          "texture": "#wood"
+          "texture": "#wood",
+          "uv": [
+            14.5,
+            2,
+            15.5,
+            15
+          ]
         },
         "west": {
-          "texture": "#wood"
+          "texture": "#wood",
+          "uv": [
+            0.5,
+            2,
+            1.5,
+            15
+          ]
         },
         "up": {
-          "texture": "#cabinet_top"
+          "texture": "#cabinet_top",
+          "uv": [
+            8.03125,
+            0.5,
+            15.25,
+            1.5
+          ]
         },
         "down": {
-          "texture": "#cabinet_top"
+          "texture": "#cabinet_top",
+          "uv": [
+            8.03125,
+            14.5,
+            15.25,
+            15.5
+          ]
         }
       },
-      "name": "cabinet_door"
+      "name": "cabinet_door_right"
     }
   ]
 }

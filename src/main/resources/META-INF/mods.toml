@@ -4,7 +4,7 @@ license="MIT"
 
 [[mods]]
 modId="cozykitchens"
-version="0.2.1"
+version="0.3.0"
 displayName="Cozy Kitchens for Blockheads"
 authors="Fine Edge / Rafe Robichaud"
 description='''Wood-specific Farmer's Delight cabinet artwork, ceramic sinks and soft enamel appliances powered by Cooking for Blockheads. Includes optional Vanilla Backport pale oak.'''

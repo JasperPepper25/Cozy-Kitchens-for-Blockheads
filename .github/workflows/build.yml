@@ -27,6 +27,11 @@ jobs:
           cache: gradle
       - name: Build production JAR
         run: ./gradlew --no-daemon clean build
+      - name: Check model surfaces, texture coordinates and palette
+        run: |
+          python3 -m pip install Pillow
+          python3 tools/prepare_reference_assets.py
+          python3 tools/verify_resources.py
       - name: Verify and package release files
         run: python3 tools/package_release.py
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
@@ -65,5 +70,44 @@ jobs:
           path: |
             run/logs/
             build/reports/
+          if-no-files-found: ignore
+          retention-days: 14
+
+  client-tests:
+    name: Client models and paired doors (${{ matrix.profile }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - profile: base
+            backport: ''
+          - profile: backport
+            backport: '-PwithBackport'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+      - name: Start software-rendered Minecraft and inspect a disposable world
+        env:
+          LIBGL_ALWAYS_SOFTWARE: 'true'
+          ALSOFT_DRIVERS: 'null'
+        run: |
+          xvfb-run -a ./gradlew --no-daemon -PwithClientTests ${{ matrix.backport }} runClient
+          grep -q COZY_MODEL_QA_PASS run/logs/latest.log
+          grep -q COZY_WORLD_QA_PASS run/logs/latest.log
+      - name: Save client evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: client-evidence-${{ matrix.profile }}-${{ github.sha }}
+          path: |
+            run/logs/
+            run/screenshots/
+            run/crash-reports/
           if-no-files-found: ignore
           retention-days: 14
