@@ -17,7 +17,9 @@ Pale oak's lattice front, framed side panel and bordered top/bottom panel are
 original artwork. Their editable sources are `art/pale_oak_cabinet_front.svg`,
 `art/pale_oak_cabinet_side.svg` and `art/pale_oak_cabinet_top.svg`;
 `tools/create_pale_cabinet.py` exports the three PNGs.
-They and the add-on code and geometry use the root MIT License, copyright
+The four ceramic finish swatches and dark interior swatch in `art/ceramic_*.svg` are also original artwork, exported by `tools/create_ceramic_textures.py`. Each is a uniform color matched to the average of the previously referenced material; no Minecraft texture pixels are bundled.
+
+These original assets and the add-on code and geometry use the root MIT License, copyright
 (c) 2026 Rafe Robichaud.
 
 Minecraft textures are referenced at runtime and are not bundled. Cooking for

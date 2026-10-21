@@ -6,8 +6,8 @@
     "panel": "minecraft:block/warped_planks",
     "top": "minecraft:block/quartz_block_bottom",
     "metal": "minecraft:block/gold_block",
-    "enamel": "minecraft:block/white_terracotta",
-    "dark": "minecraft:block/black_terracotta",
+    "enamel": "cozykitchens:block/ceramic/ivory",
+    "dark": "cozykitchens:block/ceramic/dark",
     "glass": "minecraft:block/gray_stained_glass",
     "fire": "minecraft:block/magma",
     "water": "minecraft:block/water_still",
@@ -30,26 +30,62 @@
       "faces": {
         "north": {
           "texture": "#water",
+          "uv": [
+            3.5500000000000007,
+            2.25,
+            12.45,
+            8
+          ],
           "tintindex": 0
         },
         "south": {
           "texture": "#water",
+          "uv": [
+            3.55,
+            2.25,
+            12.45,
+            8
+          ],
           "tintindex": 0
         },
         "east": {
           "texture": "#water",
+          "uv": [
+            3.5500000000000007,
+            2.25,
+            12.45,
+            8
+          ],
           "tintindex": 0
         },
         "west": {
           "texture": "#water",
+          "uv": [
+            3.55,
+            2.25,
+            12.45,
+            8
+          ],
           "tintindex": 0
         },
         "up": {
           "texture": "#water",
+          "uv": [
+            3.55,
+            3.55,
+            12.45,
+            12.45
+          ],
           "tintindex": 0
         },
         "down": {
           "texture": "#water",
+          "uv": [
+            3.55,
+            3.5500000000000007,
+            12.45,
+            12.45
+          ],
           "tintindex": 0
         }
       },

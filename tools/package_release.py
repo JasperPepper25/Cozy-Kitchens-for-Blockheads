@@ -25,6 +25,8 @@ with zipfile.ZipFile(jar) as z:
     expected_pngs = {f['bundled'].removeprefix('src/main/resources/') for f in provenance['files']}
     expected_pngs.update(f'assets/cozykitchens/textures/block/cabinet/pale_oak_cabinet_{part}.png'
                          for part in ['front', 'side', 'top'])
+    expected_pngs.update(f'assets/cozykitchens/textures/block/ceramic/{finish}.png'
+                        for finish in ['ivory', 'sage', 'blush', 'charcoal', 'dark'])
     assert {n for n in names if n.endswith('.png')} == expected_pngs
     for f in provenance['files']:
         assert hashlib.sha256(z.read(f['bundled'].removeprefix('src/main/resources/'))).hexdigest() == f['sha256']
@@ -36,13 +38,8 @@ with zipfile.ZipFile(jar) as z:
                for k in ['counter','cabinet','cooking_table','sink','corner','hanging_corner'])
     core = z.read('dev/fineedge/cozykitchens/CozyKitchens.class')
     assert b'f_58915_' in core and b'validBlocks' not in core, 'Block entity field was not reobfuscated'
-    baseline = ROOT / 'research/baseline-0.2.0.jar'
-    if baseline.exists():
-        with zipfile.ZipFile(baseline) as previous:
-            classes = {n for n in names if n.endswith('.class')}
-            assert classes == {n for n in previous.namelist() if n.endswith('.class')}
-            assert all(z.read(n) == previous.read(n) for n in classes), 'Production behavior changed in a texture-only patch'
-        print(f'PASS: all {len(classes)} production classes are byte-identical to 0.2.0.')
+    assert 'dev/fineedge/cozykitchens/client/PairedDoorRenderer.class' in names
+    assert len([n for n in names if n.startswith('assets/cozykitchens/models/') and n.endswith('.json')]) == 361
 
 shutil.copy2(jar, DIST / jar.name)
 shutil.copy2(ROOT / 'docs/INSTALL.md', DIST / 'Cozy-Kitchens-Install-and-Guide.md')
@@ -52,7 +49,8 @@ for folder in ['src', 'gradle', 'art', 'docs', '.github']:
     files.extend(p for p in (ROOT / folder).rglob('*') if p.is_file())
 for name in ['build.gradle','settings.gradle','gradle.properties','gradlew','gradlew.bat','LICENSE','THIRD_PARTY_NOTICES.md','README.md','VERIFICATION.md','CHANGELOG.md','CONTRIBUTING.md','.gitignore','.gitattributes']:
     files.append(ROOT / name)
-for name in ['generate_resources.py','generate_test_structure.py','create_pale_cabinet.py','verify_resources.py','render_catalog.py','package_release.py']:
+for name in ['generate_resources.py','generate_test_structure.py','create_pale_cabinet.py','create_ceramic_textures.py',
+             'prepare_reference_assets.py','verify_resources.py','render_catalog.py','package_release.py']:
     files.append(ROOT / 'tools' / name)
 source = DIST / f'Cozy-Kitchens-{version}-Source.zip'
 with zipfile.ZipFile(source, 'w', zipfile.ZIP_DEFLATED) as z:
@@ -63,6 +61,6 @@ with zipfile.ZipFile(source) as z:
     assert z.testzip() is None
 report = {'jar': jar.name, 'jar_sha256': hashlib.sha256(jar.read_bytes()).hexdigest(),
           'source': source.name, 'source_files': len(files), 'blocks': 84, 'wood_sets': 12, 'appliance_finishes': 4,
-          'cabinet_pngs': len(expected_pngs), 'model_files': 312}
+          'cabinet_pngs': 36, 'ceramic_pngs': 5, 'model_files': 361}
 (DIST / 'build-verification.json').write_text(json.dumps(report, indent=2) + '\n')
 print(json.dumps(report, indent=2))

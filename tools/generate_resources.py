@@ -25,43 +25,79 @@ def write(path, value):
 
 
 def cube(a, b, texture="wood", uv=None):
+    # Minecraft samples the stitched atlas, not a repeating standalone texture.
+    # Implicit UVs outside 0..16 can read neighbouring sprites (notably on faucets).
+    x0, y0, z0 = a; x1, y1, z1 = b
+    defaults = {
+        'north': [16-x1, 16-y1, 16-x0, 16-y0], 'south': [x0, 16-y1, x1, 16-y0],
+        'east': [16-z1, 16-y1, 16-z0, 16-y0], 'west': [z0, 16-y1, z1, 16-y0],
+        'up': [x0, z0, x1, z1], 'down': [x0, 16-z1, x1, 16-z0],
+    }
     faces = {}
     for side in ["north", "south", "east", "west", "up", "down"]:
-        face = {"texture": "#" + texture}
-        if uv is not None:
-            face["uv"] = uv
+        coords = list(uv if uv is not None else defaults[side])
+        if any(v < 0 or v > 16 for v in coords):
+            coords = [0, 0, abs(coords[2]-coords[0]), abs(coords[3]-coords[1])]
+        face = {"texture": "#" + texture, "uv": coords}
         faces[side] = face
     return {"from": list(a), "to": list(b), "faces": faces}
 
 
-def model(elements, wood="minecraft:block/oak_planks", enamel="minecraft:block/white_terracotta"):
+def remove_covered_faces(elements):
+    """Drop whole hidden faces, including the shared ends of joined faucet pieces."""
+    result = copy.deepcopy(elements)
+    directions = {'west': (0, -1), 'east': (0, 1), 'down': (1, -1),
+                  'up': (1, 1), 'north': (2, -1), 'south': (2, 1)}
+    for index, part in enumerate(result):
+        for side in list(part['faces']):
+            axis, sign = directions[side]
+            plane = part['to' if sign > 0 else 'from'][axis]
+            others = [e for i, e in enumerate(result) if i != index and
+                      e['from'][axis] - 1e-7 < plane + sign * 1e-5 < e['to'][axis] + 1e-7]
+            axes = [i for i in range(3) if i != axis]
+            # Boundaries partition the face into rectangles with uniform coverage.
+            cuts = [sorted({part['from'][a], part['to'][a]} |
+                           {v for e in others for v in [e['from'][a], e['to'][a]]
+                            if part['from'][a] < v < part['to'][a]}) for a in axes]
+            covered = bool(others) and all(any(all(e['from'][a] <= p <= e['to'][a]
+                for a, p in zip(axes, ((u0+u1)/2, (v0+v1)/2))) for e in others)
+                for u0, u1 in zip(cuts[0], cuts[0][1:])
+                for v0, v1 in zip(cuts[1], cuts[1][1:]))
+            if covered: del part['faces'][side]
+    return result
+
+
+def model(elements, wood="minecraft:block/oak_planks", enamel="cozykitchens:block/ceramic/ivory"):
     return {"parent": "minecraft:block/block", "render_type": "minecraft:solid",
             "textures": {"wood": wood, "panel": wood, "top": "minecraft:block/quartz_block_bottom",
                          "metal": "minecraft:block/gold_block", "enamel": enamel,
-                         "dark": "minecraft:block/black_terracotta", "glass": "minecraft:block/gray_stained_glass",
+                         "dark": "cozykitchens:block/ceramic/dark", "glass": "minecraft:block/gray_stained_glass",
                          "fire": "minecraft:block/magma", "water": "minecraft:block/water_still",
-                         "particle": wood}, "elements": elements}
+                         "particle": wood}, "elements": remove_covered_faces(elements)}
 
 
 def shell(cabinet=False):
-    low, high, front = (2, 16, 4) if cabinet else (0, 14, 1.75)
-    parts = [cube((0, low, front), (1, high, 16)), cube((15, low, front), (16, high, 16)),
-             cube((1, low, 15), (15, high, 16)), cube((1, low, front), (15, low + 1, 15)),
+    low, floor, high, front = (2, 2.75, 15.25, 4) if cabinet else (0, 1, 14, 1.75)
+    parts = [cube((0, floor, front), (1, high, 16)), cube((15, floor, front), (16, high, 16)),
+             cube((1, floor, 15), (15, high, 16)),
+             cube((0, low, 3 if cabinet else front), (16, floor, 16)),
              cube((1, 6.5, max(front, 3.5)), (15, 7, 15))]
     if cabinet:
-        parts += [cube((0, 15.25, 3), (16, 16, 16)), cube((0, 2, 3), (16, 2.75, 16))]
+        parts += [cube((0, 15.25, 3), (16, 16, 16))]
     else:
-        parts += [cube((0, 14, 0), (16, 16, 16), "top"), cube((1, 0, 3), (15, 1, 15), "dark")]
+        parts += [cube((0, 14, 0), (16, 16, 16), "top")]
     return parts
 
 
-def door(cabinet=False, flipped=False, material="wood"):
+def door(cabinet=False, flipped=False, material="wood", half=None):
     lo, hi, z = (2.75, 15.25, 2.75) if cabinet else (1, 14, .5)
-    # One clean textured front: species-specific panels, hinges and pulls come from the artwork.
-    panel = cube((.75, lo, z), (15.25, hi, z + 1), material)
-    panel['name'] = 'cabinet_door'
-    panel['faces']['north'] = {'uv': [0, 0, 16, 16], 'texture': '#front'}
-    parts = [panel]
+    parts = []
+    for name, x0, x1, u0, u1 in [('left', .75, 7.96875, 0, 8), ('right', 8.03125, 15.25, 8, 16)]:
+        if half is not None and name != half: continue
+        panel = cube((x0, lo, z), (x1, hi, z + 1), material)
+        panel['name'] = 'cabinet_door_' + name
+        panel['faces']['north'] = {'uv': [u0, 0, u1, 16], 'texture': '#front'}
+        parts.append(panel)
     return mirror(parts) if flipped else parts
 
 
@@ -87,9 +123,12 @@ def sink():
              cube((3.5, 8, 12.5), (12.5, 14, 13.5), "top")]
     for i, piece in enumerate(basin): piece['name'] = f'basin_{i}'
     parts += basin
-    faucet = [cube((7.5, 16, 14), (8.5, 21, 15), 'faucet'),
-              cube((7.5, 20, 10), (8.5, 21, 14), 'faucet'),
-              cube((7.5, 19, 10), (8.5, 20, 11), 'faucet')]
+    # A mounted collar, solid riser, continuous arm, downspout and side lever.
+    faucet = [cube((7.125, 16, 13.625), (8.875, 16.375, 15.375), 'faucet'),
+              cube((7.5, 16.375, 14), (8.5, 20.25, 15), 'faucet'),
+              cube((7.5, 20.25, 10), (8.5, 21.25, 15), 'faucet'),
+              cube((7.5, 19.25, 10), (8.5, 20.25, 11), 'faucet'),
+              cube((8.5, 17, 14.125), (9.75, 17.625, 14.875), 'faucet')]
     for i, piece in enumerate(faucet): piece['name'] = f'faucet_{i}'
     parts += faucet
     parts += door()
@@ -114,7 +153,7 @@ def cabinet_model(parts, wood):
     result['textures']['cabinet_top'] = base + 'top'
     if any(p.get('name', '').startswith('faucet_') for p in parts):
         result['textures']['faucet'] = FAUCET_TEXTURES[FAUCET_FINISHES[wood]]
-    for piece in parts:
+    for piece in result['elements']:
         for side in ['up', 'down']:
             if side in piece['faces'] and piece['faces'][side]['texture'] == '#wood':
                 piece['faces'][side]['texture'] = '#cabinet_top'
@@ -129,8 +168,10 @@ def table():
 
 def corner(hanging=False):
     low = 2 if hanging else 0
-    parts = [cube((0, low, 0), (16, low + 1, 16)), cube((0, low, 15), (16, 16, 16)),
-             cube((15, low, 0), (16, 16, 15)), cube((0, 8, 0), (15, 8.7, 15))]
+    # Six enclosed faces. Walls stop beneath the cap instead of intersecting it.
+    parts = [cube((0, low, 0), (16, low + 1, 16)),
+             cube((0, low + 1, 0), (1, 15, 16)), cube((15, low + 1, 0), (16, 15, 16)),
+             cube((1, low + 1, 0), (15, 15, 1)), cube((1, low + 1, 15), (15, 15, 16))]
     parts += [cube((0, 15, 0), (16, 16, 16), "wood" if hanging else "top")]
     return parts
 
@@ -187,17 +228,20 @@ def generate():
                 for flipped in [False, True]:
                     path = wood + "_" + kind + "_door" + ("_flipped" if flipped else "")
                     write(ASSETS / f"models/block/{path}.json", cabinet_model(door(kind == "cabinet", flipped), wood))
+                for half in ['left', 'right']:
+                    write(ASSETS / f'models/block/{wood}_{kind}_door_{half}.json',
+                          cabinet_model(door(kind == 'cabinet', half=half), wood))
             entry(wood, kind, body, item_body=inv)
         write(ASSETS / f'models/block/{wood}_sink_liquid.json', sink_liquid(wood))
 
     for finish, tex in FINISHES.items():
-        enamel = "minecraft:block/" + tex
+        enamel = "cozykitchens:block/ceramic/" + finish
         def appliance(parts):
             m = model(parts, enamel, enamel)
             m["textures"]["panel"] = enamel
             return m
-        oven_body = [cube((0, 1, 2), (1, 15, 16), "enamel"), cube((15, 1, 2), (16, 15, 16), "enamel"),
-                     cube((1, 1, 15), (15, 15, 16), "dark"), cube((1, 1, 2), (15, 2, 15), "dark"),
+        oven_body = [cube((0, 2, 2), (1, 14, 16), "enamel"), cube((15, 2, 2), (16, 14, 16), "enamel"),
+                     cube((1, 2, 15), (15, 14, 16), "enamel"), cube((0, 1, 2), (16, 2, 16), "enamel"),
                      cube((0, 14, 0), (16, 16, 16), "enamel"), cube((1, 12, 0), (15, 14, 2), "enamel")]
         for x in [3.5, 7.5, 11.5]: oven_body.append(cube((x, 12.5, -.3), (x + 1, 13.5, .2), "metal"))
         for x in [2, 9]:
@@ -212,9 +256,9 @@ def generate():
         for part, mesh in [("oven_door", oven_door()), ("oven_door_active", oven_door(True)), ("oven_door_handle", [])]:
             write(ASSETS / f"models/block/{finish}_{part}.json", appliance(mesh))
 
-        fridge_body = [cube((0, 0, 1.5), (1, 16, 16), "enamel"), cube((15, 0, 1.5), (16, 16, 16), "enamel"),
-                       cube((1, 0, 15), (15, 16, 16), "top"), cube((1, 0, 2), (15, 1, 15), "top"),
-                       cube((1, 15, 2), (15, 16, 15), "top"), cube((1, 8, 2), (15, 8.5, 15), "top")]
+        fridge_body = [cube((0, 1, 1.5), (1, 15, 16), "enamel"), cube((15, 1, 1.5), (16, 15, 16), "enamel"),
+                       cube((1, 1, 15), (15, 15, 16), "enamel"), cube((0, 0, 1.5), (16, 1, 16), "enamel"),
+                       cube((0, 15, 1.5), (16, 16, 16), "enamel"), cube((1, 8, 2), (15, 8.5, 15), "top")]
         def fridge_door(flipped=False, upper=False):
             p = [cube((.5, .5, .75), (15.5, 15.5, 2), "enamel"),
                  cube((1.3, 1.3, .5), (14.7, 14.7, .75), "enamel"),
@@ -249,6 +293,7 @@ def generate():
     write(RES / "data/minecraft/tags/blocks/mineable/axe.json", {"replace": False, "values": wood_blocks + pale_blocks})
     write(RES / "data/minecraft/tags/blocks/mineable/pickaxe.json", {"replace": False, "values": ["cozykitchens:" + finish + "_" + kind for finish in FINISHES for kind in ["oven", "fridge", "toaster"]]})
     write(ASSETS / "lang/en_us.json", LANG)
+    write(ASSETS / 'models/block/empty.json', model([]))
     write(ROOT / "research/preview-models.json", PREVIEW)
     print(f"Generated {len(PREVIEW)} block variants with models, recipes, loot, tags and names.")
 

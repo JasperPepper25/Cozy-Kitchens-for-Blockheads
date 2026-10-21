@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.0
+
+- Blue sink water on all wood variants, matching the native CFB tint.
+- Complete solid gold/black faucet assemblies, with safe texture coordinates above the block boundary.
+- Fully enclosed lower and hanging corners; corrected countertop and cabinet-floor overlaps.
+- Separate left/right opening doors for every counter and wall cabinet, using native animation timing and stored-item rendering.
+- Oven body overlap and burner/control texture-coordinate fixes.
+- Original smooth ceramic textures in the existing ivory, sage, blush and charcoal palette for ovens, fridges and toasters.
+- Matching fridge caps and stacking bands.
+- Preserved all 36 accepted cabinet textures, registry IDs, recipes and native stored data.
+- Added geometric and atlas-coordinate regression checks, client/in-world tests, screenshots and CI coverage with and without Backport.
+
 ## 0.2.1
 
 - Gold faucets for spruce, jungle, dark oak, mangrove, cherry, and crimson sinks.

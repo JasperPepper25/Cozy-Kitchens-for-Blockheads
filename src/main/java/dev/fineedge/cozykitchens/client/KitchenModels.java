@@ -3,6 +3,7 @@ package dev.fineedge.cozykitchens.client;
 import dev.fineedge.cozykitchens.CozyKitchens;
 import net.blay09.mods.balm.api.DeferredObject;
 import net.blay09.mods.cookingforblockheads.client.ModModels;
+import net.blay09.mods.cookingforblockheads.tile.ModBlockEntities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.block.model.BakedQuad;
@@ -13,9 +14,12 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ModelEvent;
+import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.client.model.BakedModelWrapper;
 import net.minecraftforge.client.model.data.ModelData;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -23,16 +27,17 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-/** Route variant door and basin-water meshes; CFB continues to drive their animation. */
+/** Variant materials and paired doors driven by the native CFB block entities. */
 @Mod.EventBusSubscriber(modid = CozyKitchens.ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public final class KitchenModels {
     private KitchenModels() {}
 
     @SubscribeEvent
     public static void registerModels(ModelEvent.RegisterAdditional event) {
+        event.register(CozyKitchens.id("block/empty"));
         for (String wood : CozyKitchens.WOODS) {
             if (wood.equals("pale_oak") && !ModList.get().isLoaded("vanillabackport")) continue;
-            for (String part : new String[]{"counter_door", "counter_door_flipped", "cabinet_door", "cabinet_door_flipped", "sink_liquid"})
+            for (String part : new String[]{"counter_door_left", "counter_door_right", "cabinet_door_left", "cabinet_door_right", "sink_liquid"})
                 event.register(CozyKitchens.id("block/" + wood + "_" + part));
         }
         for (String finish : CozyKitchens.FINISHES) {
@@ -43,13 +48,23 @@ public final class KitchenModels {
         }
     }
 
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(ModBlockEntities.counter.get(), PairedDoorRenderer::counter);
+        event.registerBlockEntityRenderer(ModBlockEntities.cabinet.get(), PairedDoorRenderer::cabinet);
+    }
+
+    @SubscribeEvent
+    public static void registerWaterColors(RegisterColorHandlersEvent.Block event) {
+        // Same water blue as CFB 16.0.15's sink. Its registration covers only its own block.
+        event.register((state, level, pos, tintIndex) -> 0x3f76e4,
+                CozyKitchens.VARIANTS.stream().filter(v -> v.kind() == CozyKitchens.Kind.SINK)
+                        .map(v -> v.block().get()).toArray(net.minecraft.world.level.block.Block[]::new));
+    }
+
     @SubscribeEvent
     public static void setup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            ModModels.counterDoors.set(0, route(ModModels.counterDoors.get(0), "counter_door"));
-            ModModels.counterDoorsFlipped.set(0, route(ModModels.counterDoorsFlipped.get(0), "counter_door_flipped"));
-            ModModels.cabinetDoors.set(0, route(ModModels.cabinetDoors.get(0), "cabinet_door"));
-            ModModels.cabinetDoorsFlipped.set(0, route(ModModels.cabinetDoorsFlipped.get(0), "cabinet_door_flipped"));
             ModModels.sinkLiquid = route(ModModels.sinkLiquid, "sink_liquid");
             for (int i = 0; i < ModModels.ovenDoors.size(); i++) {
                 ModModels.ovenDoors.set(i, route(ModModels.ovenDoors.get(i), "oven_door"));

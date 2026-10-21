@@ -18,13 +18,13 @@ The development-only Forge tests exercise native block entities, survival drops,
 ./gradlew -PwithGameTests -PwithBackport runGameTestServer
 ```
 
-The client smoke check verifies block/item meshes, animated finishes, gold/black faucets, pale oak side/end sprites, native model fallbacks, and a resource reload:
+The client check verifies block/item meshes, baked UV bounds, blue water tint, paired-door pivots and renderer registration, materials and native fallbacks before and after a resource reload. It then creates a disposable world, opens native and variant cabinets, checks synced contents and saves six screenshots:
 
 ```sh
 ./gradlew -PwithClientTests -PwithBackport runClient
 ```
 
-The client check closes Minecraft automatically after success. Run it on a desktop with OpenGL support. Companion checks additionally use `-PwithFurniture` and the official Cozy Home 3.0.4 JAR in the ignored `vendor/` folder, as described in [the guide](docs/INSTALL.md).
+The client check closes Minecraft automatically after success; screenshots are in `run/screenshots/`. It uses night vision for inspection lighting. Linux CI runs it through `xvfb-run` and software OpenGL. Run it on a desktop with OpenGL support. Companion checks additionally use `-PwithFurniture` and the official Cozy Home 3.0.4 JAR in the ignored `vendor/` folder, as described in [the guide](docs/INSTALL.md).
 
 Always run `clean build` without test flags before distributing a production JAR. Test flags add their sources to the main source set and must not be used for releases.
 
@@ -32,10 +32,11 @@ Always run `clean build` without test flags before distributing a production JAR
 
 - Edit the model/recipe generator in `tools/generate_resources.py`, then regenerate committed resources.
 - Pale oak's original editable SVGs live in `art/`; export them using `python3 tools/create_pale_cabinet.py` with Pillow installed.
+- Ceramic finishes have editable SVG swatches in `art/`; export with `python3 tools/create_ceramic_textures.py`. Keep their palette matched to the previous finishes.
 - Keep the 33 credited Farmer's Delight PNGs unchanged and retain their MIT License and provenance. Document the source and license of any additional artwork.
-- The exact-resource catalog renderer needs Pillow, NumPy, the Minecraft client JAR at `research/client.jar`, and the reference Backport JAR at the path in the script. These dependencies are not committed.
+- Install Pillow and NumPy, then run `python3 tools/prepare_reference_assets.py` for checksum-verified Minecraft/Backport development inputs. These JARs are not committed.
 - Run `python3 tools/render_catalog.py` and copy `dist/Cozy-Kitchens-Catalog.png` to `docs/Cozy-Kitchens-Catalog.png` after a visual revision.
-- `tools/verify_resources.py` uses those same reference JARs to check texture resolution, recipes, geometry clearance, and water bounds. Optional comparison JARs under `research/` enable preservation checks against earlier releases.
+- `tools/verify_resources.py` uses those same reference JARs to check texture resolution, recipes, geometry clearance, water bounds, enclosed corners, overlapping outward faces, UV bounds, ceramic color matching and all 36 accepted cabinet texture hashes (`art/approved-cabinet-textures.json`).
 
 Preserve registry IDs and native CFB inventory serialization across updates. Add regression coverage for functional changes; appearance changes should include a regenerated catalog and client inspection. Describe actual test scope in `VERIFICATION.md` and each change in `CHANGELOG.md`.
 

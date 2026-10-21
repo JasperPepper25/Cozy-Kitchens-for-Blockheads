@@ -2,16 +2,16 @@
   "parent": "minecraft:block/block",
   "render_type": "minecraft:solid",
   "textures": {
-    "wood": "minecraft:block/green_terracotta",
-    "panel": "minecraft:block/green_terracotta",
+    "wood": "cozykitchens:block/ceramic/sage",
+    "panel": "cozykitchens:block/ceramic/sage",
     "top": "minecraft:block/quartz_block_bottom",
     "metal": "minecraft:block/gold_block",
-    "enamel": "minecraft:block/green_terracotta",
-    "dark": "minecraft:block/black_terracotta",
+    "enamel": "cozykitchens:block/ceramic/sage",
+    "dark": "cozykitchens:block/ceramic/dark",
     "glass": "minecraft:block/gray_stained_glass",
     "fire": "minecraft:block/magma",
     "water": "minecraft:block/water_still",
-    "particle": "minecraft:block/green_terracotta"
+    "particle": "cozykitchens:block/ceramic/sage"
   },
   "elements": [
     {
@@ -27,22 +27,58 @@
       ],
       "faces": {
         "north": {
-          "texture": "#enamel"
+          "texture": "#enamel",
+          "uv": [
+            1,
+            4,
+            15,
+            14
+          ]
         },
         "south": {
-          "texture": "#enamel"
+          "texture": "#enamel",
+          "uv": [
+            1,
+            4,
+            15,
+            14
+          ]
         },
         "east": {
-          "texture": "#enamel"
+          "texture": "#enamel",
+          "uv": [
+            14,
+            4,
+            15.2,
+            14
+          ]
         },
         "west": {
-          "texture": "#enamel"
+          "texture": "#enamel",
+          "uv": [
+            0.8,
+            4,
+            2,
+            14
+          ]
         },
         "up": {
-          "texture": "#enamel"
+          "texture": "#enamel",
+          "uv": [
+            1,
+            0.8,
+            15,
+            2
+          ]
         },
         "down": {
-          "texture": "#enamel"
+          "texture": "#enamel",
+          "uv": [
+            1,
+            14,
+            15,
+            15.2
+          ]
         }
       }
     },
@@ -59,22 +95,49 @@
       ],
       "faces": {
         "north": {
-          "texture": "#fire"
-        },
-        "south": {
-          "texture": "#fire"
+          "texture": "#fire",
+          "uv": [
+            3,
+            7,
+            13,
+            12.5
+          ]
         },
         "east": {
-          "texture": "#fire"
+          "texture": "#fire",
+          "uv": [
+            15.2,
+            7,
+            15.45,
+            12.5
+          ]
         },
         "west": {
-          "texture": "#fire"
+          "texture": "#fire",
+          "uv": [
+            0.55,
+            7,
+            0.8,
+            12.5
+          ]
         },
         "up": {
-          "texture": "#fire"
+          "texture": "#fire",
+          "uv": [
+            3,
+            0.55,
+            13,
+            0.8
+          ]
         },
         "down": {
-          "texture": "#fire"
+          "texture": "#fire",
+          "uv": [
+            3,
+            15.2,
+            13,
+            15.45
+          ]
         }
       }
     },
@@ -91,22 +154,58 @@
       ],
       "faces": {
         "north": {
-          "texture": "#metal"
+          "texture": "#metal",
+          "uv": [
+            3,
+            5,
+            13,
+            5.800000000000001
+          ]
         },
         "south": {
-          "texture": "#metal"
+          "texture": "#metal",
+          "uv": [
+            3,
+            5,
+            13,
+            5.800000000000001
+          ]
         },
         "east": {
-          "texture": "#metal"
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            0.75,
+            0.8000000000000007
+          ]
         },
         "west": {
-          "texture": "#metal"
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            0.75,
+            0.8000000000000007
+          ]
         },
         "up": {
-          "texture": "#metal"
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            10,
+            0.75
+          ]
         },
         "down": {
-          "texture": "#metal"
+          "texture": "#metal",
+          "uv": [
+            0,
+            0,
+            10,
+            0.75
+          ]
         }
       }
     }
